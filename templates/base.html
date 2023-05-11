@@ -17,6 +17,47 @@
     <title>Roaming In India</title>
 </head>
 <body>
+
+<header>
+    <!--Top-Navbar-->
+  <nav class="nav-extended text-shadow  cyan accent-4">
+    <div class="nav-wrapper">
+      <a href="#!" class="brand-logo">Roaming in India</a>
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="">Home</a></li>
+        <li><a href="">Places</a></li>
+        {% if session.user %}
+        <li><a href="">Account</a></li>
+        {% if session.user|lower == "admin"|lower %}
+        <li><a href="">Manage categories</a></li>
+        {% endif %}
+        <li><a href="">Log Out</a></li>
+        {% else %}
+        <li><a href="">Sign Up</a></li>
+        <li><a href="">Log In</a></li>
+        {% endif %}
+     </ul>
+    </div>
+  </nav>
+    <!--Mobile Navbar-->
+    <ul class="sidenav" id="mobile-demo">
+        <li><h4 class="center-align cyan-text text-darken-4">Roaming in India</h4> </li>
+        <li><a href="">Home</a></li>
+        <li><a href="">Places</a></li>
+        {% if session.user %}
+        <li><a href="">Account</a></li>
+        {% if session.user|lower == "admin"|lower %}
+        <li><a href="">Manage categories</a></li>
+        {% endif %}
+        <li><a href="">Log Out</a></li>
+        {% else %}
+        <li><a href="">Sign Up</a></li>
+        <li><a href="">Log In</a></li>
+        {% endif %}
+     </ul>
+          
+    </header>
     
     {% block content %}
     {% endblock %}
