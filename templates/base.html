@@ -32,7 +32,7 @@
         {% if session.user|lower == "admin"|lower %}
         <li><a href="">Manage categories</a></li>
         {% endif %}
-        <li><a href="">Log Out</a></li>
+        <li><a href="{{ url_for('logout') }}">Log Out</a></li>
         {% else %}
         <li><a href="{{ url_for('register') }}">Sign Up</a></li>
         <li><a href="{{ url_for('login') }}">Log In</a></li>
@@ -50,7 +50,7 @@
         {% if session.user|lower == "killolsevak"|lower %}
         <li><a href="">Manage categories</a></li>
         {% endif %}
-        <li><a href="">Log Out</a></li>
+        <li><a href="{{ url_for('logout') }}">Log Out</a></li>
         {% else %}
         <li><a href="{{ url_for('register') }}">Sign Up</a></li>
         <li><a href="{{ url_for('login') }}">Log In</a></li>
