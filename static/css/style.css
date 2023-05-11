@@ -13,7 +13,7 @@ h1 {
 	font-weight: 600;
 	font-size: 48px;
 	letter-spacing: 3px;
-	color: #381D2A;
+	color: #006064;
 }
 
 h2 {
@@ -21,7 +21,7 @@ h2 {
 	font-weight: 400;
 	font-size: 16px;
 	letter-spacing: 3px;
-	color: #381D2A;
+	color: #006064;
 }
 
 h3 {
@@ -30,7 +30,7 @@ h3 {
 	font-size: 20px;
 	letter-spacing: 2px;
 	text-transform: uppercase;
-	color: #381D2A;
+	color: #006064;
 }
 
 h4 {
@@ -38,7 +38,7 @@ h4 {
 	font-size: 16px;
 	font-weight: 400;
 	letter-spacing: 2px;
-	color: #381D2A;
+	color: #006064;
 }
 
 h5 {
@@ -46,21 +46,18 @@ h5 {
 	font-size: 16px;
 	font-weight: 400;
 	letter-spacing: 2px;
-	color: #381D2A;
+	color: #006064;
 }
-
-/*----------navbar-----------*/
-/* 
-changing the text color on navbar:
-https://stackoverflow.com/questions/33746269/changing-the-text-color-on-a-nav-bar-using-materialize-css-rails 
 */
+/*----------navbar-----------*/
+
 
 nav ul li a {
-	color: #381D2A;
+	color: #e0f7fa;
 }
 
 nav a i {
-	color: #381D2A;
+	color: #e0f7fa;
 }
 
 nav {
@@ -80,14 +77,14 @@ nav {
 }
 
 .menu a:hover {
-	color: #FC6A60;
+	color: #80deea;
 	background-color: transparent;
 }
 
 .brand-logo {
 	text-transform: uppercase;
 	font-family: 'Gluten', cursive;
-	color: #381D2A !important;
+	color: #e0f7fa;
 }
 
 .logo {
@@ -101,7 +98,7 @@ nav {
 
 .top-text {
 	letter-spacing: 7px;
-	color: #381D2A;
+	color: #006064;
 	text-transform: uppercase;
 }
 
@@ -139,29 +136,29 @@ nav {
 }
 
 .card .card-title:hover {
-	color: #FC6A60 !important;
+	color: #26c6da;
 }
 
 .pagination li.active {
-	background-color: #FC6A60 !important;
+	background-color: #26c6da;
 }
 
 /*----------buttons-----------*/
 
 .btn {
 	margin: 10px;
-	background-color: #FC6A60 !important;
+	background-color: #26c6da;
 }
 
 .btn-small {
 	margin: 10px;
-	background-color: #FC6A60 !important;
+	background-color: #26c6da;
 }
 
 .btn-hero {
 	height: 40px;
 	line-height: 40px;
-	transition: background-color .2s ease-out;
+	transition: .2s ease-out;
 }
 
 /*----------footer----------*/
@@ -171,19 +168,19 @@ nav {
 }
 
 .social-icons {
-	color: #381D2A !important;
+	color: #006064 ;
 }
 
 i.fab {
 	width: 18px;
 	height: 18px;
 	padding: 10px 0;
-	font-size: 20px !important;
+	font-size: 20px ;
 	line-height: 7px;
 }
 
 .social-icons i:hover {
-	color: #FC6A60;
+	color: cyan lighten-4;
 }
 
 /*----------media queries----------*/
