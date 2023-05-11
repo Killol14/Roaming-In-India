@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+{% block content %}
+<!--add place button-->
+<div class="row">
+   <div class="col s12 center-align">
+      <h3 class="center-align">Places In India</h3>
+      <a class="btn center-align" href="{{ url_for('add_recipe') }}">Add Place<i
+         class="fas fa-plus right "></i></a>
+   </div>
+</div>
+{% if place|length > 0 %}
+<!--show users places-->
+<div class="row">
+   {% for place in places %}
+   {% if session.user|lower == place.created_by|lower %}
+   <div class="col s12 m6 l4">
+      <div class="card hoverable">
+         <div class="card-image waves-effect waves-block waves-light">
+            <img class="activator place-image" src="{{ place.image_url }}" alt="#">
+         </div>
+         <div class="card-content">
+            {{ place.category_name }}
+            <span class="card-title activator grey-text text-darken-4">{{ place.place_name }}</span>
+         </div>
+         <!--places display-->
+         <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4">Location<i class="far fa-times-circle right"></i></span>
+            {% for location in place.location.splitlines() %}
+            <div>
+               <ul>
+                  <li>
+                     {{ ingredient }}
+                  </li>
+               </ul>
+            </div>
+            {% endfor %}
+            <span class="card-title grey-text text-darken-4">Direction</span>
+            <div>
+               <ol>
+                  {% for direction in place.direction.splitlines() %}
+                  <li>{{ direction }}</li>
+                  {% endfor %}
+               </ol>
+            </div>
+            <!--edit/delete place-->
+            <div>
+               {% if session.user|lower == place.created_by|lower %}
+               <a href="{{ url_for('edit_place', place_id=place._id) }}" class="btn-small grey">Edit</a>
+               <a href="{{ url_for('delete_place', place_id=place._id) }}"
+                  class="btn-small grey modal-trigger" data-target="modal1{{ place._id }}">Delete</a>
+               {% endif %}
+               <p><em>by: {{place.created_by}}</em></p>
+            </div>
+         </div>
+      </div>
+      <!-- Modal Structure -->
+      <div id="modal1{{place._id}}" class="modal">
+         <div class="modal-content">
+            <h4>Are You Sure You Want To Delete This Added Place?</h4>
+            <p>Deleting The Place Will Remove It Permanently</p>
+         </div>
+         <div class="modal-footer">
+            <a href="{{ url_for('delete_place', place_id=place._id) }}" class="modal-close waves-effect
+               waves-green btn-flat">Yes</a>
+            <a href="{{ url_for('get_places' )}}" class="modal-close waves-effect waves-green
+               btn-flat">No</a>
+         </div>
+      </div>
+   </div>
+   {% endif %}
+   {% endfor %}
+</div>
+{% else %}
+<h4 class="center-align red-text">You haven't Added any Visiting Places yet!</h4>
+{% endif %}
+
+{% endblock %}
