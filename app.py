@@ -151,6 +151,25 @@ def add_place():
     categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template("add_place.html", categories=categories)
 
+@app.route("/edit_place/<place_id>", methods=["GET", "POST"])
+def edit_place(place_id):
+    # updates places in database
+    if is_logged_in() and request.method == "POST":
+        submit = {
+            "category_name": request.form.get("category_name"),
+            "place_name": request.form.get("place_name"),
+            "locations": request.form.get("locations"),
+            "descriptions": request.form.get("descriptions"),
+            "image_url": request.form.get("image_url"),
+            "created_by": session["user"],
+        }
+        mongo.db.places.update({"_id": ObjectId(place_id)}, submit)
+        flash("Your added Place Is Updated!")
+
+    place = mongo.db.places.find_one({"_id": ObjectId(place_id)})
+    categories = mongo.db.categories.find().sort("category_name", 1)
+    return render_template(
+        "edit_place.html", place=place, categories=categories)
 
 @app.route("/delete_place/<place_id>")
 def delete_place(place_id):
