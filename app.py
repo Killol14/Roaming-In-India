@@ -18,19 +18,6 @@ app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
 
-def get_places():
-    # Query the database for all documents in the "places" collection
-    places = places_collection.find()
-
-    # Check if any documents were retrieved
-    if places.count() > 0:
-        # Pass the retrieved documents to the "places.html" template
-        return render_template("places.html", places=places)
-    else:
-        # If no documents were retrieved, pass a message to the "places.html" template
-        return render_template("places.html", message="No places found.")
-
-
 def is_logged_in() -> Union[str, None]:
     """
     Returns None if the user isn't logged in otherwise returns the username
@@ -86,16 +73,15 @@ def register():
         flash("Sign Up Successful!")
     return render_template("register.html")
 
-@app.route("/account", methods=["GET", "POST"])
-def account():
-    if is_logged_in():
-        """
-        (Chat GPT)
-        grab the session user's username from db
-        """
-        user = mongo.db.users.find_one({"username": session["user"]})
-        recipes = list(mongo.db.recipes.find({"created_by": user["username"]}))
-        return render_template("account.html", user=user, places=places)
+@app.route("/account/<username>", methods=["GET", "POST"])
+def account(username):
+    # grab the session user's username from db
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
+
+    if session["user"]:
+        return render_template("account.html", username=username)
+
     return redirect(url_for("login"))
 
 @app.route("/login", methods=["GET", "POST"])
@@ -177,6 +163,39 @@ def delete_place(place_id):
         mongo.db.places.remove({"_id": ObjectId(place_id)})
         flash("Your Added place is Deleted")
     return redirect(url_for("get_places"))
+
+@app.route("/add_category", methods=["GET", "POST"])
+def add_category():
+    if request.method == "POST":
+        category = {
+            "category_name": request.form.get("category_name")
+        }
+        mongo.db.categories.insert_one(category)
+        flash("New Category Added")
+        return redirect(url_for("get_categories"))
+
+    return render_template("add_category.html")
+
+
+@app.route("/edit_category/<category_id>", methods=["GET", "POST"])
+def edit_category(category_id):
+    if request.method == "POST":
+        submit = {
+            "category_name": request.form.get("category_name")
+        }
+        mongo.db.categories.update({"_id": ObjectId(category_id)}, submit)
+        flash("Category Updated")
+        return redirect(url_for("get_categories"))
+
+    category = mongo.db.categories.find_one({"_id": ObjectId(category_id)})
+    return render_template("edit_category.html", category=category)
+
+
+@app.route("/delete_category/<category_id>")
+def delete_category(category_id):
+    mongo.db.categories.remove({"_id": ObjectId(category_id)})
+    flash("Category Deleted")
+    return redirect(url_for("get_categories"))    
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
