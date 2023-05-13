@@ -86,6 +86,17 @@ def register():
         flash("Sign Up Successful!")
     return render_template("register.html")
 
+@app.route("/account", methods=["GET", "POST"])
+def account():
+    if is_logged_in():
+        """
+        (Chat GPT)
+        grab the session user's username from db
+        """
+        user = mongo.db.users.find_one({"username": session["user"]})
+        recipes = list(mongo.db.recipes.find({"created_by": user["username"]}))
+        return render_template("account.html", user=user, places=places)
+    return redirect(url_for("login"))
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
@@ -113,19 +124,6 @@ def login():
             return redirect(url_for("login"))
     return render_template("login.html")
 
-
-@app.route("/account", methods=["GET", "POST"])
-def account():
-    if is_logged_in():
-        """
-        (Chat GPT)
-        grab the session user's username from db
-        """
-        user = mongo.db.users.find_one({"username": session["user"]})
-        recipes = list(mongo.db.recipes.find({"created_by": user["username"]}))
-        return render_template("account.html", user=user, places=places)
-    return redirect(url_for("login"))
-
 @app.route("/logout")
 def logout():
     if is_logged_in():
@@ -133,6 +131,26 @@ def logout():
         flash("You have been logged out, see you soon!")
         session.pop("user", None)
     return redirect(url_for("login"))
+
+@app.route("/add_place", methods=["GET", "POST"])
+def add_place():
+    # adds recipe to database
+    if is_logged_in() and request.method == "POST":
+        recipe = {
+            "category_name": request.form.get("category_name"),
+            "place_name": request.form.get("place_name"),
+            "locations": request.form.get("locations"),
+            "descriptions": request.form.get("descriptions"),
+            "image_url": request.form.get("image_url"),
+            "created_by": session["user"],
+        }
+        mongo.db.places.insert_one(place)
+        flash("place Successfully Added")
+        return redirect(url_for("get_places"))
+
+    categories = mongo.db.categories.find().sort("category_name", 1)
+    return render_template("add_place.html", categories=categories)
+
 
 @app.route("/delete_place/<place_id>")
 def delete_place(place_id):
