@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+   <h3 class="center-align">Edit Place</h3>
+   <div class="row card-panel">
+      <form class="col s12" method="POST" action="{{ url_for('edit_place', place_id=place._id) }}">
+         <!--category dropdown-->
+         <div class="row">
+            <div class="input-field col s12 m6">
+               <i class="far fa-folder-open prefix"></i>
+               <select id="category_name" name="category_name" class="validate" required>
+                  <option value="" disabled>Choose your category</option>
+                  {% for category in categories %}
+                  {% if category.category_name == place.category_name %}
+                  <option value="{{ category.category_name }}" selected>{{ category.category_name }}
+                  </option>
+                  {% else %}
+                  <option value="{{ category.category_name }}">{{ category.category_name }}</option>
+                  {% endif %}
+                  {% endfor %}
+               </select>
+               <label for="category_name">Place Category</label>
+            </div>
+         </div>
+         <!--place name-->
+         <div class="row">
+            <div class="input-field col s12 m6">
+               <i class="fas fa-pencil-alt prefix"></i>
+               <input id="place_name" name="place_name" minlength="5" maxlength="50" value="{{ place.place_name }}"
+                  type="text" class="validate" required>
+               <label for="place_namee">Place Name</label>
+            </div>
+         </div>
+         <!--Locations-->
+         <div class="row">
+            <div class="input-field col s12 m6">
+                <i class="fa-solid fa-location-smile"></i>
+               <textarea id="locations" name="locations" class="validate materialize-textarea"
+                  required>
+               {{- place.locations -}}</textarea>
+               <label for="locations">Locations</label>
+            </div>
+         </div>
+         <!--Descriptions-->
+         <div class="row">
+            <div class="input-field col s12 m6">
+               <i class="fas fa-list-ul prefix"></i>
+               <textarea id="descriptions" name="descriptions" class="validate materialize-textarea" required>
+               {{- place.descriptions -}}</textarea>
+               <label for="instructions">Descriptions</label>
+            </div>
+         </div>
+         <!--image_url-->
+         <div class="row">
+            <div class="input-field col s12 m6">
+               <i class="far fa-image prefix"></i>
+               <input id="image_url" name="image_url" type="text" value="{{ place.image_url }}" class="validate"
+                  required>
+               <label for="place_url">Image</label>
+            </div>
+         </div>
+         <div class="row">
+            <div class="col s12 center-align">
+               <!-- cancel button -->
+               <a href="{{ url_for('get_places') }}" class="btn-small">
+               Cancel <i class="fas fa-times-circle right"></i>
+               </a>
+               <!--submit button-->
+               <button type="submit" class="btn-small grey">Updated Place<i class="fas fa-plus right"></i></button>
+            </div>
+         </div>
+      </form>
+   </div>
+</div>
+{% endblock %}
