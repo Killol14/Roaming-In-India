@@ -19,32 +19,30 @@ app.secret_key = os.environ.get("SECRET_KEY")
 mongo = PyMongo(app)
 
 def is_logged_in() -> Union[str, None]:
-    """
-    Returns None if the user isn't logged in otherwise returns the username
-    
-    """
     return session.get("user")
+
+@app.route("/")
+@app.route("/home")
+def home():
+    return render_template("index.html")
+
 
 @app.route("/get_places/<category>")
 def filter_places(category):
-    """
-    Used to dynamically filter through places via the category
-    """
     app.logger.info(f"Filtering with category {category}")
     places = list(mongo.db.places.find({"category_name": category.title()}))
     return render_template(
         "filtered_places.html", places=places, category=category)  
 
-@app.route("/")
 @app.route("/get_places")
 def get_places():
-    places = mongo.db.places.find()
+    places = list(mongo.db.places.find()) 
     return render_template("places.html", places=places)
 
 @app.route("/search", methods=["GET", "POST"])
 def search():
     """
-    Searches for both the places title and the locations
+    Searches for both the places and the locations
     """
     query = request.form.get("query")
     places = list(mongo.db.places.find({"$text": {"$search": query}}))
@@ -68,21 +66,13 @@ def register():
         }
         mongo.db.users.insert_one(register)
 
-        # put the new user into 'session' cookie
+           # put the new user into 'session' cookie
         session["user"] = request.form.get("username").lower()
-        flash("Sign Up Successful!")
+        flash("Registration Successful!")
+        return redirect(url_for("account", username=session["user"]))
     return render_template("register.html")
+   
 
-@app.route("/account/<username>", methods=["GET", "POST"])
-def account(username):
-    # grab the session user's username from db
-    username = mongo.db.users.find_one(
-        {"username": session["user"]})["username"]
-
-    if session["user"]:
-        return render_template("account.html", username=username)
-
-    return redirect(url_for("login"))
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
@@ -110,6 +100,14 @@ def login():
             return redirect(url_for("login"))
     return render_template("login.html")
 
+@app.route("/account", methods=["GET", "POST"])    
+def account():
+    if is_logged_in():
+        user = mongo.db.users.find_one({"username": session["user"]})
+        places = list(mongo.db.recipes.find({"created_by": user["username"]}))
+        return render_template("account.html", user=user, places=places)
+    return redirect(url_for("login"))
+
 @app.route("/logout")
 def logout():
     if is_logged_in():
@@ -120,13 +118,13 @@ def logout():
 
 @app.route("/add_place", methods=["GET", "POST"])
 def add_place():
-    # adds recipe to database
+    # adds place to database
     if is_logged_in() and request.method == "POST":
-        recipe = {
+        place = {
             "category_name": request.form.get("category_name"),
             "place_name": request.form.get("place_name"),
-            "locations": request.form.get("locations"),
-            "descriptions": request.form.get("descriptions"),
+            "location": request.form.get("location"),
+            "description": request.form.get("description"),
             "image_url": request.form.get("image_url"),
             "created_by": session["user"],
         }
@@ -144,12 +142,12 @@ def edit_place(place_id):
         submit = {
             "category_name": request.form.get("category_name"),
             "place_name": request.form.get("place_name"),
-            "locations": request.form.get("locations"),
-            "descriptions": request.form.get("descriptions"),
+            "location": request.form.get("location"),
+            "description": request.form.get("description"),
             "image_url": request.form.get("image_url"),
             "created_by": session["user"],
         }
-        mongo.db.places.update({"_id": ObjectId(place_id)}, submit)
+        mongo.db.places.update_one({"_id": ObjectId(place_id)}, {"$set": submit})
         flash("Your added Place Is Updated!")
 
     place = mongo.db.places.find_one({"_id": ObjectId(place_id)})
@@ -160,9 +158,14 @@ def edit_place(place_id):
 @app.route("/delete_place/<place_id>")
 def delete_place(place_id):
     if is_logged_in():
-        mongo.db.places.remove({"_id": ObjectId(place_id)})
+        mongo.db.places.delete_one({"_id": ObjectId(place_id)})
         flash("Your Added place is Deleted")
     return redirect(url_for("get_places"))
+
+@app.route("/get_categories")
+def get_categories():
+    categories = list(mongo.db.categories.find().sort("category_name", 1))
+    return render_template("categories.html", categories=categories)
 
 @app.route("/add_category", methods=["GET", "POST"])
 def add_category():
@@ -183,7 +186,7 @@ def edit_category(category_id):
         submit = {
             "category_name": request.form.get("category_name")
         }
-        mongo.db.categories.update({"_id": ObjectId(category_id)}, submit)
+        mongo.db.categories.update_one({"_id": ObjectId(category_id)},{"$set": submit})
         flash("Category Updated")
         return redirect(url_for("get_categories"))
 
@@ -193,7 +196,7 @@ def edit_category(category_id):
 
 @app.route("/delete_category/<category_id>")
 def delete_category(category_id):
-    mongo.db.categories.remove({"_id": ObjectId(category_id)})
+    mongo.db.categories.delete_one({"_id": ObjectId(category_id)})
     flash("Category Deleted")
     return redirect(url_for("get_categories"))    
 

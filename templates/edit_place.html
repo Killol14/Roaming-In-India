@@ -34,20 +34,20 @@
          <!--Locations-->
          <div class="row">
             <div class="input-field col s12 m6">
-                <i class="fa-solid fa-location-smile"></i>
-               <textarea id="locations" name="locations" class="validate materialize-textarea"
+               <i class="fa-solid fa-location prefix"></i>
+               <textarea id="location" name="location" class="validate materialize-textarea"
                   required>
-               {{- place.locations -}}</textarea>
-               <label for="locations">Locations</label>
+               {{- place.location -}}</textarea>
+               <label for="location">Location</label>
             </div>
          </div>
          <!--Descriptions-->
          <div class="row">
             <div class="input-field col s12 m6">
                <i class="fas fa-list-ul prefix"></i>
-               <textarea id="descriptions" name="descriptions" class="validate materialize-textarea" required>
-               {{- place.descriptions -}}</textarea>
-               <label for="instructions">Descriptions</label>
+               <textarea id="description" name="description" class="validate materialize-textarea" required>
+               {{- place.description -}}</textarea>
+               <label for="descriptions">Description</label>
             </div>
          </div>
          <!--image_url-->
@@ -66,7 +66,7 @@
                Cancel <i class="fas fa-times-circle right"></i>
                </a>
                <!--submit button-->
-               <button type="submit" class="btn-small grey">Updated Place<i class="fas fa-plus right"></i></button>
+               <button type="submit" class="btn-small cyan darken-4">Updated Place<i class="fas fa-plus right"></i></button>
             </div>
          </div>
       </form>

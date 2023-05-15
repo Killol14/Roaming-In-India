@@ -9,17 +9,35 @@
 </div>
 <!--headings-->
 <div class="row">
-   <div class="col s12 m12 xl6">
-      <h1 class="center-align headline">Are You looking for best place to visit in India? <a href="{{ url_for('get_places') }}"
-         class="btn-small btn-hero">SHOW PLACES</a></h1>
+   <div class="col s12 m12 ">
+      <h1 class="center-align headline">Are You looking for best place to visit in India?</h1>
+       <a href="{{ url_for('get_places') }}"
+         class="btn-small btn-hero">SHOW PLACES</a>
       <h2 class="center-align sub-headline">Share Your Best Tips and Advice And
          Find New Favourites Places to visit in India
       </h2>
    </div>
-   <!--hero image-->
-   <div class="col s12 m12 xl6">
-      <img class="responsive-img hero-image" src="{{ url_for('static', filename='images/roaming1.jpeg') }}"
-         alt="india">
-   </div>
 </div>
+
+<!--Footer-->
+<footer>
+       <div class="row">
+          <!-- social icons/links -->
+          <div class="col s12 pagination center-align">
+             <ul class="social-icons" >
+                <li><a target="_blank"  href="https://www.facebook.com" rel="noopener"><i
+                         class="fab fa-facebook" aria-hidden="true"></i></a>
+                </li>
+                <li><a target="_blank" href="https://www.instagram.com" rel="noopener"><i
+                         class="fab fa-instagram" aria-hidden="true"></i></a>
+                </li>
+                <li><a target="_blank"  href="https://www.twitter.com" rel="noopener"><i
+                         class="fab fa-twitter" aria-hidden="true"></i></a></li>
+                <li><a target="_blank" href="https://www.pinterest.com" rel="noopener"><i
+                         class="fab fa-pinterest" aria-hidden="true"></i></a>
+                </li>
+             </ul>
+          </div>
+       </div>
+ </footer>
 {% endblock %}

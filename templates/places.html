@@ -1,5 +1,4 @@
 {% extends "base.html" %}
-
 {% block content %}
     <h3 class="center-align">Places In India</h3>
     <div class="container">
@@ -25,15 +24,20 @@
             </div>
         </div>
     </div>
-    <!--category links-->
-    
+
+    <!--category Links-->
+
     <ul class="pagination center-align">
-        <li class="active"><a href="{{ url_for('get_places') }}">All</a></li>
-      
-    </ul> 
+        <li {% if category == '' %}class="active"{% endif %}><a href="{{ url_for('get_places') }}">All</a></li>
+        <li {% if category == 'Plasces To Travel' %}class="active"{% endif %}><a href="{{ url_for('filter_places', category='Plasces To Travel') }}">Plasces To Travel</a></li>
+        <li {% if category == 'Travel Tips' %}class="active"{% endif %}><a href="{{ url_for('filter_places', category='Travel Tips') }}">Travel Tips</a></li>
+        <li {% if category == 'Activities' %}class="active"{% endif %}><a href="{{ url_for('filter_places', category='Activities') }}">Activities</a></li>
+        <li {% if category == 'Most visited place' %}class="active"{% endif %}><a href="{{ url_for('filter_places', category='Most visited place') }}">Most visited place</a></li>
+        <li {% if category == 'Transport' %}class="active"{% endif %}><a href="{{ url_for('filter_places', category='Transport') }}">Transport</a></li>
+    </ul>
     <!--all Places-->
     <div class="row">
-             
+            {% if places|length > 0 %}
             {% for place in places %}
                 <!--places card-->
                 <div class="col s12 m6 l4">
@@ -47,8 +51,8 @@
                         </div>
                         <!--Place display-->
                         <div class="card-reveal">
-                            <span class="card-title grey-text text-darken-4">Locations<i class="far fa-times-circle right"></i></span>
-                            {% for location in place.get('locations', '').splitlines() %}
+                            <span class="card-title grey-text text-darken-4">Location<i class="far fa-times-circle right"></i></span>
+                            {% for location in place.location.splitlines() %}
                                 <div>
                                     <ul>
                                         <li>
@@ -57,22 +61,21 @@
                                     </ul>
                                 </div>
                             {% endfor %}
-                            <span class="card-title grey-text text-darken-4">Direction</span>
+                            <span class="card-title grey-text text-darken-4">Description</span>
                             <div>
                                 <ol>
-                                    {% for direction in place.get('direction', '').splitlines() %}
-                                        <li>{{ direction }}</li>
+                                    {% for description in place.description.splitlines() %}
+                                    <li>{{ description }}</li>
                                     {% endfor %}
                                 </ol>
                             </div>
                       
-                      
             <!--edit/delete place-->
             <div>
                {% if session.user|lower == place.created_by|lower %}
-               <a href="{{ url_for('edit_place', place_id=place._id) }}" class="btn-small grey">Edit</a>
+               <a href="{{ url_for('edit_place', place_id=place._id) }}" class="btn-small green">Edit</a>
                <a href="{{ url_for('delete_place', place_id=place._id) }}"
-                  class="btn-small grey modal-trigger" data-target="modal1{{ place._id }}">Delete</a>
+                  class="btn-small red modal-trigger" data-target="modal1{{ place._id }}">Delete</a>
                {% endif %}
                <p><em>by: {{place.created_by}}</em></p>
             </div>
@@ -94,7 +97,30 @@
    </div>
    {% endfor %}
 </div>
-
+{% else %}
 <h4 class="center-align red-text">No Results Found</h4>
+{% endif %}
+<!--Footer-->
+<footer>
+    <div class="row">
+       <!-- social icons/links -->
+       <div class="col s12 pagination center-align">
+          <ul class="social-icons" >
+             <li><a target="_blank"  href="https://www.facebook.com" rel="noopener"><i
+                      class="fab fa-facebook" aria-hidden="true"></i></a>
+             </li>
+             <li><a target="_blank" href="https://www.instagram.com" rel="noopener"><i
+                      class="fab fa-instagram" aria-hidden="true"></i></a>
+             </li>
+             <li><a target="_blank"  href="https://www.twitter.com" rel="noopener"><i
+                      class="fab fa-twitter" aria-hidden="true"></i></a></li>
+             <li><a target="_blank" href="https://www.pinterest.com" rel="noopener"><i
+                      class="fab fa-pinterest" aria-hidden="true"></i></a>
+             </li>
+          </ul>
+       </div>
+    </div>
+</footer>
+
 
 {% endblock %}

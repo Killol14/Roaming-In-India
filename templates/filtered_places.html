@@ -26,11 +26,14 @@
         </div>
     </div>
     <!--category links-->
-    
-    <ul class="pagination center-align">
-        <li class="active"><a href="{{ url_for('get_places') }}">All</a></li>
-      
-    </ul> 
+<ul class="pagination center-align">
+    <li {% if category == '' %}class="active"{% endif %}><a href="{{ url_for('get_places') }}">All</a></li>
+    <li {% if category == 'Plasces To Travel' %}class="active"{% endif %}><a href="{{ url_for('filter_places', category='Plasces To Travel') }}">Plasces To Travel</a></li>
+    <li {% if category == 'Travel Tips' %}class="active"{% endif %}><a href="{{ url_for('filter_places', category='Travel Tips') }}">Travel Tips</a></li>
+    <li {% if category == 'Activities' %}class="active"{% endif %}><a href="{{ url_for('filter_places', category='Activities') }}">Activities</a></li>
+    <li {% if category == 'Most visited place' %}class="active"{% endif %}><a href="{{ url_for('filter_places', category='Most visited place') }}">Most visited place</a></li>
+    <li {% if category == 'Transport' %}class="active"{% endif %}><a href="{{ url_for('filter_places', category='Transport') }}">Transport</a></li>
+</ul>
     <!--all Places-->
     <div class="row">
             {% if places|length > 0 %}  
@@ -47,8 +50,8 @@
                         </div>
                         <!--Place display-->
                         <div class="card-reveal">
-                            <span class="card-title grey-text text-darken-4">Locations<i class="far fa-times-circle right"></i></span>
-                            {% for location in place.locations.splitlines() %}
+                            <span class="card-title grey-text text-darken-4">Location<i class="far fa-times-circle right"></i></span>
+                            {% for location in place.location.splitlines() %}
                                 <div>
                                     <ul>
                                         <li>
@@ -57,10 +60,10 @@
                                     </ul>
                                 </div>
                             {% endfor %}
-                            <span class="card-title grey-text text-darken-4">Direction</span>
+                            <span class="card-title grey-text text-darken-4">Description</span>
                             <div>
                                 <ol>
-                                    {% for direction in place.direction.splitlines() %}
+                                    {% for direction in place.description.splitlines() %}
                                         <li>{{ direction }}</li>
                                     {% endfor %}
                                 </ol>

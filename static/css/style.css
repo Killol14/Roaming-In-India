@@ -1,5 +1,6 @@
 body {
     background-color: azure;
+	
 }
 .text-shadow {
     text-shadow: 3px 3px 3px rosybrown
@@ -14,6 +15,7 @@ h1 {
 	font-size: 48px;
 	letter-spacing: 3px;
 	color: #006064;
+	
 }
 
 h2 {
@@ -73,7 +75,7 @@ nav {
 	padding-right: 20px;
 	padding-top: 5px;
 	padding-bottom: 5px;
-	background-color: #FFF0EB;
+	background-color:#80deea;
 }
 
 .menu a:hover {
@@ -81,18 +83,6 @@ nav {
 	background-color: transparent;
 }
 
-.brand-logo {
-	text-transform: uppercase;
-	font-family: 'Gluten', cursive;
-	color: #e0f7fa;
-}
-
-.logo {
-	width: 50px;
-	margin-top: 10px;
-	margin-right: 10px;
-	margin-left: 5px;
-}
 
 /*----------index page-----------*/
 
@@ -102,11 +92,6 @@ nav {
 	text-transform: uppercase;
 }
 
-.top-text-image {
-	width: 30px;
-	height: auto;
-	margin-left: 5px;
-}
 
 .headline {
 	text-align: center;
@@ -117,17 +102,17 @@ nav {
 	margin-top: 3rem;
 }
 
-.hero-image {
-	height: 100vh;
+a.btn-small.btn-hero {
+	margin: 0;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
 }
 
-/*----------recipes-----------*/
+/*----------Places-----------*/
 
-.recipe-image {
-	width: 300px;
-	height: 300px;
-	object-fit: cover;
-}
 
 .card .card-title {
 	font-weight: 500;
@@ -143,52 +128,16 @@ nav {
 	background-color: #26c6da;
 }
 
-/*----------buttons-----------*/
 
-.btn {
-	margin: 10px;
-	background-color: #26c6da;
-}
-
-.btn-small {
-	margin: 10px;
-	background-color: #26c6da;
-}
-
-.btn-hero {
-	height: 40px;
-	line-height: 40px;
-	transition: .2s ease-out;
-}
 
 /*----------footer----------*/
-
-.page-footer {
-	background-color: #FFF0EB;
+.pagination li i {
+    font-size: 2rem;
+    color: #006064;
+	position: relative;
+	margin-top: 500px;
 }
 
-.social-icons {
-	color: #006064 ;
-}
-
-i.fab {
-	width: 18px;
-	height: 18px;
-	padding: 10px 0;
-	font-size: 20px ;
-	line-height: 7px;
-}
-
-.social-icons i:hover {
-	color: cyan lighten-4;
-}
-
-/*----------media queries----------*/
-/* 
-Large devices (laptops/desktops, 992px and up) 
-*/
-@media only screen and (min-width: 992px) {
-	.headline {
-		margin-top: 6rem;
-	}
+.pagination li i:hover {
+ color: #26c6da;
 }
