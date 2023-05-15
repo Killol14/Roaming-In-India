@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+<!--top text-->
+<div class="row top-text-box">
+   <div class="col s12 center-align">
+      <h4 class="top-text">Let's Travel to website for finding out more about India.
+        </h4>
+   </div>
+</div>
+<!--headings-->
+<div class="row">
+   <div class="col s12 m12 xl6">
+      <h1 class="center-align headline">Are You looking for best place to visit in India? <a href="{{ url_for('get_places') }}"
+         class="btn-small btn-hero">SHOW PLACES</a></h1>
+      <h2 class="center-align sub-headline">Share Your Best Tips and Advice And
+         Find New Favourites Places to visit in India
+      </h2>
+   </div>
+   <!--hero image-->
+   <div class="col s12 m12 xl6">
+      <img class="responsive-img hero-image" src="{{ url_for('static', filename='images/roaming1.jpeg') }}"
+         alt="india">
+   </div>
+</div>
+{% endblock %}
