@@ -41,9 +41,6 @@ def get_places():
 
 @app.route("/search", methods=["GET", "POST"])
 def search():
-    """
-    Searches for both the places and the locations
-    """
     query = request.form.get("query")
     places = list(mongo.db.places.find({"$text": {"$search": query}}))
     return render_template("places.html", places=places)
