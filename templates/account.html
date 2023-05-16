@@ -36,11 +36,11 @@
             {% endfor %}
             <span class="card-title grey-text text-darken-4">Direction</span>
             <div>
-               <ol>
+               <ul>
                   {% for direction in place.description.splitlines() %}
                   <li>{{ direction }}</li>
                   {% endfor %}
-               </ol>
+               </ul>
             </div>
             <!--edit/delete place-->
             <div>
