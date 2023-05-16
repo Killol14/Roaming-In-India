@@ -11,8 +11,10 @@ main {
 	flex: 1 0 auto;
 	background-image: url(/static/images/family.jpeg);
 	background-repeat: no-repeat;
+	background-size: 600px;
 	background-position: center;
     height: 100vh;
+	
 	
 }
 
