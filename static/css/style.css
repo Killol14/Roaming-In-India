@@ -108,7 +108,7 @@ a.brand-logo {
 
 .headline {
 	text-align: center;
-	font-size: 54px;
+	font-size: auto;
 }
 
 .sub-headline {
@@ -120,7 +120,7 @@ a.btn-small.btn-hero {
     justify-content: center;
     align-items: center;
     position: absolute;
-    top: 50%;
+    top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
@@ -153,18 +153,31 @@ a.btn-small.btn-hero {
 .pagination li i {
     font-size: 2rem;
     color: #006064;
-	margin-top: 400px;
-	
+	margin-top: 450px;
 }
 
 .pagination li i:hover {
  color: #26c6da;
+} 
+
+/*-------- Social Media ------*/
+
+@media (max-width: 1290px) {
+
+	a.btn-small.btn-hero {
+		top: 80%;
+		left: 50%;
+	}
+	
 }
 
-@media only screen and (min-width: 992px) {
-	.headline {
-		margin-top: 6rem;
+@media (max-width: 992px) {
+	
+	a.btn-small.btn-hero {
+		top: 80%;
+		left: 50%;
 	}
+	
 }
 
 @media (max-width: 768px) {
@@ -174,20 +187,21 @@ a.btn-small.btn-hero {
         
     }
 	a.btn-small.btn-hero {
-		top: 70%;
+		top: 80%;
 		left: 50%;
 	}
-}
+	
 
 @media (max-width: 480px) {
     a.brand-logo {
         font-size: 16px;
     }
-	.pagination li i {
-		margin-top: 100px;
-	}
-	a.btn-small.btn-hero {
-		top: 80%;
-		left: 50%;
-	}
+	
+	
+}
+@media (max-width: 360px) {
+    a.brand-logo {
+        font-size: 16px;
+    }
+
 }
