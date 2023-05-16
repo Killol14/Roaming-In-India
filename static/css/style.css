@@ -1,12 +1,19 @@
 body {
-    background-color: azure;
-	
+	font-family: 'Montserrat', sans-serif;
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
 }
 .text-shadow {
     text-shadow: 3px 3px 3px rosybrown
 }
 main {
 	flex: 1 0 auto;
+	background-image: url(/static/images/family.jpeg);
+	background-repeat: no-repeat;
+	background-position: center;
+    height: 100vh;
+	
 }
 
 h1 {
@@ -85,7 +92,11 @@ nav {
 
 
 /*----------index page-----------*/
-
+a.brand-logo {
+	text-transform: uppercase;
+	font-family:sans-serif ;
+	color:#e0f7fa;
+}
 .top-text {
 	letter-spacing: 7px;
 	color: #006064;
@@ -103,16 +114,22 @@ nav {
 }
 
 a.btn-small.btn-hero {
-	margin: 0;
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	-ms-transform: translate(-50%, -50%);
-	transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
-/*----------Places-----------*/
 
+/*----------Places-----------*/
+.place-image {
+	width: 300px;
+	height: 300px;
+	object-fit: cover;
+}
 
 .card .card-title {
 	font-weight: 500;
@@ -134,10 +151,41 @@ a.btn-small.btn-hero {
 .pagination li i {
     font-size: 2rem;
     color: #006064;
-	position: relative;
-	margin-top: 500px;
+	margin-top: 400px;
+	
 }
 
 .pagination li i:hover {
  color: #26c6da;
+}
+
+@media only screen and (min-width: 992px) {
+	.headline {
+		margin-top: 6rem;
+	}
+}
+
+@media (max-width: 768px) {
+    
+    a.brand-logo {
+        font-size: 20px;
+        
+    }
+	a.btn-small.btn-hero {
+		top: 70%;
+		left: 50%;
+	}
+}
+
+@media (max-width: 480px) {
+    a.brand-logo {
+        font-size: 16px;
+    }
+	.pagination li i {
+		margin-top: 100px;
+	}
+	a.btn-small.btn-hero {
+		top: 80%;
+		left: 50%;
+	}
 }

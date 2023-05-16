@@ -28,7 +28,7 @@
     <!--category Links-->
 
     <ul class="pagination center-align">
-        <li {% if category == '' %}class="active"{% endif %}><a href="{{ url_for('get_places') }}">All</a></li>
+        <li class="active"><a href="{{ url_for('get_places') }}">All</a></li>
         <li {% if category == 'Plasces To Travel' %}class="active"{% endif %}><a href="{{ url_for('filter_places', category='Plasces To Travel') }}">Plasces To Travel</a></li>
         <li {% if category == 'Travel Tips' %}class="active"{% endif %}><a href="{{ url_for('filter_places', category='Travel Tips') }}">Travel Tips</a></li>
         <li {% if category == 'Activities' %}class="active"{% endif %}><a href="{{ url_for('filter_places', category='Activities') }}">Activities</a></li>
