@@ -147,13 +147,13 @@ def edit_place(place_id):
             "image_url": request.form.get("image_url"),
             "created_by": session["user"],
         }
-        mongo.db.places.update_one({"_id": ObjectId(place_id)}, {"$set": submit})
+        mongo.db.places.update_one({"_id": ObjectId(place_id)}, {'$set': submit})
         flash("Your added Place Is Updated!")
+       
 
     place = mongo.db.places.find_one({"_id": ObjectId(place_id)})
     categories = mongo.db.categories.find().sort("category_name", 1)
-    return render_template(
-        "edit_place.html", place=place, categories=categories)
+    return render_template("edit_place.html", place=place, categories=categories)
 
 @app.route("/delete_place/<place_id>")
 def delete_place(place_id):
