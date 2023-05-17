@@ -44,13 +44,13 @@
                         <div class="card-image waves-effect waves-block waves-light">
                             <img class="activator place-image" src="{{ place.image_url }}" alt="image of place">
                         </div>
-                        <div class="card-content">
+                        <div class="card-content cyan-text text-darken-4">
                             {{ place.category_name }}
-                            <span class="card-title activator">{{ place.place_name }}</span>
+                            <span class="card-title activator ">{{ place.place_name }}</span>
                         </div>
                         <!--Place display-->
                         <div class="card-reveal">
-                            <span class="card-title grey-text text-darken-4">Location<i class="far fa-times-circle right"></i></span>
+                            <span class="card-title cyan-text text-darken-4">Location<i class="far fa-times-circle right"></i></span>
                             {% for location in place.location.splitlines() %}
                                 <div>
                                     <ul>
@@ -60,7 +60,7 @@
                                     </ul>
                                 </div>
                             {% endfor %}
-                            <span class="card-title grey-text text-darken-4">Description</span>
+                            <span class="card-title  cyan-text text-darken-4">Description</span>
                             <div>
                                 <ul>
                                     {% for description in place.description.splitlines() %}
