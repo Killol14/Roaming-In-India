@@ -15,9 +15,7 @@ The user can log and log out, add and amend different categories such as places 
 ## Live Project 
 
  
-
-(Link to the project here)
-https://git.heroku.com/roaming-in-india.git
+Your app can be found at https://roaming-in-india.herokuapp.com/
 
  
 
