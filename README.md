@@ -4,7 +4,7 @@
 ## Milestone Project 3 
 
  
-![Website overlook](assets/images/images/README.img/KS.png)
+![Website overlook](/static/images/README.img/RominginIndia.png)
 
 
 This website is for people who want to find about more about travelling to India, with tips and ideas for other travellers. 
@@ -17,14 +17,14 @@ The user can log and log out, add and amend different categories such as places 
  
 
 (Link to the project here)
-https://killol14.github.io/Namaste-India/
+https://git.heroku.com/roaming-in-india.git
 
  
 
 ## Repository  
 
 (Project repository here)  
-https://github.com/Killol14/Namaste-India
+https://github.com/Killol14/Roaming-In-India
  
 
 ## Table of Contents  
@@ -113,36 +113,21 @@ https://github.com/Killol14/Namaste-India
 
 ## Wireframes  
 
-### Home Page
+### Roaming In India Page
 
-![Wireframe1](assets/images/images/README.img/Home.png)
-![Wireframe2](assets/images/images/README.img/Home%20Page2.png)
-![Wireframe3](assets/images/images/README.img/Home%20Page3.png)
-
-### About Page
-
-![Wireframe](assets/images/images/README.img/About%20Page.png)
-
-### Gallery Page
-
-![Wireframe1](assets/images/images/README.img/Gallery%20Page.png)
-![Wireframe2](assets/images/images/README.img/Gallery%20Page2.png)
-
-### Package Page
-
-![Wireframe](assets/images/images/README.img/Package%20Page.png)
-
-### Contact Page
-
-![Wireframe](assets/images/images/README.img/Contact%20page.png)
+![Wireframe1](static/images/README.img/Rwireframe1.PNG)
+![Wireframe2](static/images/README.img/Rwireframe2.PNG)
+![Wireframe3](static/images/README.img/Rwireframe3.PNG)
+![Wireframe1](static/images/README.img/Rwireframe4.PNG)
+![Wireframe2](static/images/README.img/Rwireframe5.PNG)
 
 ### Ipad View
 
-![Wireframe](assets/images/images/README.img/Ipad%20View.png)
+![Wireframe](static/images/README.img/Rwireframe6.PNG)
 
-###Phone View
+### Phone View
 
-![Wireframe](assets/images/images/README.img/Phone%20View.png)
+![Wireframe](static/images/README.img/Rwireframe7.PNG)
 
 
 
