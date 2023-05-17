@@ -20,40 +20,7 @@ mongo = PyMongo(app)
 
 def is_logged_in() -> Union[str, None]:
     return session.get("user")
-@app.errorhandler(404)
-def not_found_error(error):
-    """
-    404 error page, code referenced from:
-    https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-vii-error-handling
-    """
-    return (
-        render_template(
-            "error.html",
-            error_message="We can't find the page you're looking for",
-            error_title="Oooops...",
-        ),
-        404,
-    )
 
-# this error code copied from third party
-
-@app.errorhandler(Exception)
-def server_error(error):
-    """
-    Catches any potential exception which is then handled according
-    to the instance type
-    """
-    error_title = "Oooops..."
-    if isinstance(error, InvalidId):
-        error_message = "Couldn't find it in the database"
-    else:
-        error_message = "Something went wrong"
-    return (
-        render_template(
-            "error.html", error_message=error_message, error_title=error_title
-        ),
-        500,
-    )
 @app.route("/")
 @app.route("/home")
 def home():
@@ -229,7 +196,40 @@ def delete_category(category_id):
     mongo.db.categories.delete_one({"_id": ObjectId(category_id)})
     flash("Category Deleted")
     return redirect(url_for("get_categories"))    
+@app.errorhandler(404)
+def not_found_error(error):
+    """
+    404 error page, code referenced from:
+    https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-vii-error-handling
+    """
+    return (
+        render_template(
+            "error.html",
+            error_message="We can't find the page you're looking for",
+            error_title="Oooops...",
+        ),
+        404,
+    )
 
+# this error code copied from third party
+
+@app.errorhandler(Exception)
+def server_error(error):
+    """
+    Catches any potential exception which is then handled according
+    to the instance type
+    """
+    error_title = "Oooops..."
+    if isinstance(error, InvalidId):
+        error_message = "Couldn't find it in the database"
+    else:
+        error_message = "Something went wrong"
+    return (
+        render_template(
+            "error.html", error_message=error_message, error_title=error_title
+        ),
+        500,
+    )
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
