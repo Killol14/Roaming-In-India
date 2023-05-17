@@ -59,7 +59,7 @@ h5 {
 	letter-spacing: 2px;
 	color: #006064;
 }
-*/
+
 /*----------navbar-----------*/
 
 
@@ -108,7 +108,7 @@ a.brand-logo {
 
 .headline {
 	text-align: center;
-	font-size: auto;
+	font-size: 40px;
 }
 
 .sub-headline {
