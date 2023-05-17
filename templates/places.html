@@ -28,7 +28,7 @@
 
     <ul class="pagination center-align">
         <li class="active"><a href="{{ url_for('get_places') }}">All</a></li>
-        <li {% if category == 'Plasces To Travel' %}class="active"{% endif %}><a href="{{ url_for('filter_places', category='Plasces To Travel') }}">Plasces To Travel</a></li>
+        <li {% if category == 'Places To Travel' %}class="active"{% endif %}><a href="{{ url_for('filter_places', category='Places To Travel') }}">Places To Travel</a></li>
         <li {% if category == 'Travel Tips' %}class="active"{% endif %}><a href="{{ url_for('filter_places', category='Travel Tips') }}">Travel Tips</a></li>
         <li {% if category == 'Activities' %}class="active"{% endif %}><a href="{{ url_for('filter_places', category='Activities') }}">Activities</a></li>
         <li {% if category == 'Most visited places' %}class="active"{% endif %}><a href="{{ url_for('filter_places', category='Most visited places') }}">Most visited places</a></li>
@@ -90,7 +90,7 @@
          <div class="modal-footer">
             <a href="{{ url_for('delete_place', place_id=place._id) }}" class="modal-close waves-effect
                waves-green btn-flat">Yes</a>
-            <a href="{{ url_for('get_places' )}}" class="modal-close waves-effect waves-green
+            <a href="{{ url_for('get_places' )}}" class="modal-close waves-effect waves-red
                btn-flat">No</a>
          </div>
       </div>
