@@ -16,6 +16,7 @@ app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
 app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 app.secret_key = os.environ.get("SECRET_KEY")
 
+
 mongo = PyMongo(app)
 
 def is_logged_in() -> Union[str, None]:
@@ -195,7 +196,9 @@ def edit_category(category_id):
 def delete_category(category_id):
     mongo.db.categories.delete_one({"_id": ObjectId(category_id)})
     flash("Category Deleted")
-    return redirect(url_for("get_categories"))    
+    return redirect(url_for("get_categories"))   
+
+# this error code copied from third party
 @app.errorhandler(404)
 def not_found_error(error):
     """
@@ -233,4 +236,4 @@ def server_error(error):
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
-            debug=True)
+            debug=Off)
