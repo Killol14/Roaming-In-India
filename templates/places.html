@@ -29,10 +29,10 @@
     <ul class="pagination center-align">
         <li class="active"><a href="{{ url_for('get_places') }}">All</a></li>
         <li {% if category == 'Places To Travel' %}class="active"{% endif %}><a href="{{ url_for('filter_places', category='Places To Travel') }}">Places To Travel</a></li>
+        <li {% if category == 'Most Visited Places' %}class="active"{% endif %}><a href="{{ url_for('filter_places', category='Most Visited Places') }}">Most Visited Places</a></li>
         <li {% if category == 'Travel Tips' %}class="active"{% endif %}><a href="{{ url_for('filter_places', category='Travel Tips') }}">Travel Tips</a></li>
         <li {% if category == 'Activities' %}class="active"{% endif %}><a href="{{ url_for('filter_places', category='Activities') }}">Activities</a></li>
-        <li {% if category == 'Most Visited Places' %}class="active"{% endif %}><a href="{{ url_for('filter_places', category='Most Visited Places') }}">Most Visited Places</a></li>
-        <li {% if category == 'Transport' %}class="active"{% endif %}><a href="{{ url_for('filter_places', category='Transport') }}">Transport</a></li>
+        <li {% if category == 'Transport' %}class="active"{% endif %}><a href="{{ url_for('filter_places', category='Transport') }}">Transport</a></li
         <li {% if category == 'India Map' %}class="active"{% endif %}><a href="{{ url_for('filter_places', category='India Map') }}">India Map</a></li>
     </ul>
     <!--all Places-->
