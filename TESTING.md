@@ -8,9 +8,45 @@
 ![Light House Images](static/images/TESTME.img/Roaming2.PNG)
 ![Light House Images](static/images/TESTME.img/Roaming3.PNG)
 ![Light House Images](static/images/TESTME.img/Roaming4.PNG)
-![Light House Images](static/images/TESTME.img/Roaming5.PNG)
-![Light House Images](static/images/TESTME.img/Roaming6.PNG)
 ## Manual Testing
+
+### Home Page
+![Manual Testing Image for Home Page](static/images/TESTME.img/Capture1.PNG)
+
+![Manual Testing Image for Home Page](static/images/TESTME.img/Capture2.PNG)
+![Manual Testing Image for Home Page](static/images/TESTME.img/Capture3.PNG)
+![Manual Testing Image for Home Page](static/images/TESTME.img/Capture4.PNG)
+![Manual Testing Image for Home Page](static/images/TESTME.img/Capture5.PNG)
+![Manual Testing Image for Home Page](static/images/TESTME.img/Capture6.PNG)
+![Manual Testing Image for Home Page](static/images/TESTME.img/Capture7.PNG)
+![Manual Testing Image for Home Page](static/images/TESTME.img/Capture8.PNG)
+![Manual Testing Image for Home Page](static/images/TESTME.img/Capture9.PNG)
+![Manual Testing Image for Home Page](static/images/TESTME.img/Capture10.PNG)
+![Manual Testing Image for Home Page](static/images/TESTME.img/Capture11.PNG)
+![Manual Testing Image for Home Page](static/images/TESTME.img/Capture12.PNG)
+![Manual Testing Image for Home Page](static/images/TESTME.img/Capture13.PNG)
+![Manual Testing Image for Home Page](static/images/TESTME.img/Capture14.PNG)
+![Manual Testing Image for Home Page](static/images/TESTME.img/Capture15.PNG)
+![Manual Testing Image for Home Page](static/images/TESTME.img/Capture16.PNG)
+![Manual Testing Image for Home Page](static/images/TESTME.img/Capture17.PNG)
+![Manual Testing Image for Home Page](static/images/TESTME.img/Capture18.PNG)
+![Manual Testing Image for Home Page](static/images/TESTME.img/Capture19.PNG)
+![Manual Testing Image for Home Page](static/images/TESTME.img/Capture20.PNG)
+![Manual Testing Image for Home Page](static/images/TESTME.img/Capture21.PNG)
+![Manual Testing Image for Home Page](static/images/TESTME.img/Capture1.PNG)
+![Manual Testing Image for Home Page](static/images/TESTME.img/Capture22.PNG)
+![Manual Testing Image for Home Page](static/images/TESTME.img/Capture23.PNG)
+![Manual Testing Image for Home Page](static/images/TESTME.img/Capture24.PNG)
+![Manual Testing Image for Home Page](static/images/TESTME.img/Capture25.PNG)
+![Manual Testing Image for Home Page](static/images/TESTME.img/Capture26.PNG)
+![Manual Testing Image for Home Page](static/images/TESTME.img/Capture27.PNG)
+![Manual Testing Image for Home Page](static/images/TESTME.img/Capture28.PNG)
+![Manual Testing Image for Home Page](static/images/TESTME.img/Capture29.PNG)
+![Manual Testing Image for Home Page](static/images/TESTME.img/Capture30.PNG)
+![Manual Testing Image for Home Page](static/images/TESTME.img/Capture30.PNG)
+
+
+
 #### Test Scenario :-
  * Home
      All links in navbar takes you to the correct pages
