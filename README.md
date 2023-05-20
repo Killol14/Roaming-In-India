@@ -15,7 +15,7 @@ The user can log and log out, add and amend different categories such as places 
 ## Live Project 
 
  
-Your app can be found at https://roaming-in-india.herokuapp.com/
+Roaming-In-india app can be found at https://roaming-in-india.herokuapp.com/
 
  
 
@@ -139,13 +139,6 @@ With the user in mind, I wanted to create a website that travellers can easily s
  
 
 I chose this colour scheme, as the website is based around Indian culture and colour scheme of the flag. The Orange and beige orangered colour scheme match with the Indian flag as well as the Olive colours also.   
-
-* Black
-* Olive
-* FF0000
-* FF4500
-* CFB21F
-* 9ACD32
 
 ![Namaste India Colour Scheme](assets/images/images/README.img/colour.PNG)
 
