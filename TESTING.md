@@ -4,18 +4,23 @@
 ## Validator Testing:
 ![CSS Validator Report Image](static/images/TESTME.img/Roamingcss.PNG)
 
+----------------------------
+
 ## Light House:
 ![Light House Images](static/images/TESTME.img/Roaming2.PNG)
 ![Light House Images](static/images/TESTME.img/Roaming3.PNG)
 ![Light House Images](static/images/TESTME.img/Roaming4.PNG)
 ## Manual Testing
 
-### Home Page
+### HOME PAGE
 
 ![Manual Testing Image for Home Page](static/images/TESTME.img/Capture1.PNG)
-### Show Places Page
+
+-----------------------------
+### SHOW PLACES PAGE
 
 ![Manual Testing Image for Home Page](static/images/TESTME.img/Capture2.PNG)
+![Manual Testing Image for Home Page](static/images/TESTME.img/Capture3.PNG)
 ![Manual Testing Image for Home Page](static/images/TESTME.img/Capture4.PNG)
 ![Manual Testing Image for Home Page](static/images/TESTME.img/Capture5.PNG)
 ![Manual Testing Image for Home Page](static/images/TESTME.img/Capture6.PNG)
@@ -23,53 +28,61 @@
 ![Manual Testing Image for Home Page](static/images/TESTME.img/Capture8.PNG)
 ![Manual Testing Image for Home Page](static/images/TESTME.img/Capture9.PNG)
 
-### Serch Bar page
+----------------------------
+### SEARCH BAR 
 
 ![Manual Testing Image for Home Page](static/images/TESTME.img/Capture10.PNG)
-### User Sign Up Page
+![Manual Testing Image for Home Page](static/images/TESTME.img/Capture11.PNG)
+
+---------------------------
+### USER SIGN UP PAGE
 
 ![Manual Testing Image for Home Page](static/images/TESTME.img/Capture26.PNG)
 ![Manual Testing Image for Home Page](static/images/TESTME.img/Capture27.PNG)
-### User Login Page
+![Manual Testing Image for Home Page](static/images/TESTME.img/Capture28.PNG)
+
+---------------------------
+### USER LOGIN AND OUT PAGE
 
 ![Manual Testing Image for Home Page](static/images/TESTME.img/Capture25.PNG)
-### Add Places Page
 
+---------------------------
+### ADD PLACES
+
+![Manual Testing Image for Home Page](static/images/TESTME.img/Capture12.PNG)
+![Manual Testing Image for Home Page](static/images/TESTME.img/Capture13.PNG)
+![Manual Testing Image for Home Page](static/images/TESTME.img/Capture14.PNG)
 ![Manual Testing Image for Home Page](static/images/TESTME.img/Capture15.PNG)
-![Manual Testing Image for Home Page](static/images/TESTME.img/Capture16.PNG)
 ![Manual Testing Image for Home Page](static/images/TESTME.img/Capture17.PNG)
+
+------------------------------
 ### Edit Places Page
 
-![Manual Testing Image for Home Page](static/images/TESTME.img/Capture28.PNG)
 ![Manual Testing Image for Home Page](static/images/TESTME.img/Capture29.PNG)
 ![Manual Testing Image for Home Page](static/images/TESTME.img/Capture30.PNG)
 
+--------------------------------
 ### Delete Places Page
 
+![Manual Testing Image for Home Page](static/images/TESTME.img/Capture16.PNG)
 ![Manual Testing Image for Home Page](static/images/TESTME.img/Capture18.PNG)
+
+--------------------------------
 ### Add Category Page
 
 ![Manual Testing Image for Home Page](static/images/TESTME.img/Capture19.PNG)
 ![Manual Testing Image for Home Page](static/images/TESTME.img/Capture20.PNG)
 ![Manual Testing Image for Home Page](static/images/TESTME.img/Capture21.PNG)
 ![Manual Testing Image for Home Page](static/images/TESTME.img/Capture22.PNG)
+
+--------------------------------
 ### Delete Category Page
 
 ![Manual Testing Image for Home Page](static/images/TESTME.img/Capture24.PNG)
 ![Manual Testing Image for Home Page](static/images/TESTME.img/Capture23.PNG)
 
-
-![Manual Testing Image for Home Page](static/images/TESTME.img/Capture3.PNG)
-
-![Manual Testing Image for Home Page](static/images/TESTME.img/Capture11.PNG)
-![Manual Testing Image for Home Page](static/images/TESTME.img/Capture12.PNG)
-![Manual Testing Image for Home Page](static/images/TESTME.img/Capture13.PNG)
-![Manual Testing Image for Home Page](static/images/TESTME.img/Capture14.PNG)
-
-
-
-
-
+-------------------------------
+ ### ERROR PAGE 
 
 ![Manual Testing Image for Home Page](static/images/TESTME.img/Capture31.PNG)
 
