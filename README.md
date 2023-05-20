@@ -337,34 +337,9 @@ To run this project locally you need to create the env.py file using your own va
 
 ## Summary 
 
-This website was created as, I noticed when researching ideas for this project, that there was no specific website dedicated to families and first time travellers to India. I wanted to create a website that was inclusive of all of the needs of the demographic in order to give an opportunity to showcase all the wonderful places India has to offer.  
-
-
- 
-## Credits  
-
-
- * Credit goes to Bootstrap 5 and FreeImages 
- * Navigation Bar JavaScript
- * Main Images from FreeImages
- * Gallery page from Lighthouse.js
- * Google Map From API keys
- * Contact form from Emailjs
-
-
 ### Acknowledgements
 
  
-
-With thanks to Ronan McCelland,mentor, and Ben Smith, tutor who helped me develop this idea
-
-
-Thank you to the code institute city of Bristol college for help and support.  
-
-ReadMe file structure, with credit to the former student, milestone 1 Row Gallery Website
-
-This website is purely fictious and not for public consumption.  
-
  
 
  
