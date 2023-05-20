@@ -5,7 +5,7 @@ body {
 	min-height: 100vh;
 }
 .text-shadow {
-    text-shadow: 3px 3px 3px rosybrown
+    text-shadow: 3px 3px 3px black;
 }
 main {
 	flex: 1 0 auto;
@@ -57,7 +57,7 @@ h5 {
 	font-size: 16px;
 	font-weight: 400;
 	letter-spacing: 2px;
-	color: #006064;
+	color: red;
 }
 
 /*----------navbar-----------*/
@@ -98,6 +98,7 @@ a.brand-logo {
 	text-transform: uppercase;
 	font-family:sans-serif ;
 	color:#e0f7fa;
+	margin-left: 10px;
 }
 .top-text {
 	letter-spacing: 7px;
