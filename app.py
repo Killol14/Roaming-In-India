@@ -102,7 +102,7 @@ def login():
 def account():
     if is_logged_in():
         user = mongo.db.users.find_one({"username": session["user"]})
-        places = list(mongo.db.recipes.find({"created_by": user["username"]}))
+        places = list(mongo.db.places.find({"created_by": user["username"]}))
         return render_template("account.html", user=user, places=places)
     return redirect(url_for("login"))
 
