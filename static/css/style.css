@@ -13,7 +13,7 @@ main {
 	background-repeat: no-repeat;
 	background-size: 600px;
 	background-position: center;
-    height: 100vh;
+
 	
 	
 }
@@ -156,12 +156,17 @@ a.btn-small.btn-hero {
 .pagination li i {
     font-size: 2rem;
     color: #006064;
-	margin-top: 550px;
+
 }
 
 .pagination li i:hover {
  color: #26c6da;
 } 
+.page-footer {
+    padding-top: 20px;
+    color: #fff;
+	background-color: transparent;
+}
 
 /*-------- Social Media ------*/
 
@@ -176,22 +181,20 @@ a.btn-small.btn-hero {
 			font-size: 30px;
 		}
 }
+@media (max-height: 800px) {
+	a.btn-small.btn-hero {
+		top: 80%;
+		left: 50%;
+	}
+	
+}
 @media (max-width: 500px) {
     a.brand-logo {
         font-size: 16px;
     }
 	a.btn-small.btn-hero {
-		top: 60%;
-		left: 50%;
-	}
-}
-@media (max-height: 600px) {
-	a.btn-small.btn-hero {
 		top: 80%;
 		left: 50%;
-	}
-	.pagination li i {
-		margin-top: 150px;
 	}
 }
 @media (max-width: 360px) {
