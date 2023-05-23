@@ -139,7 +139,9 @@ a.btn-small.btn-hero {
 	text-transform: uppercase;
 	font-size: 16px;
 }
-
+.row .col {
+    padding: 1.2rem;
+}
 .card .card-title:hover {
 	color: #26c6da;
 }
