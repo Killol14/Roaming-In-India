@@ -1,3 +1,5 @@
+# Roaming-In-India Manual Testing Page
+
 #### Test Scenario :-
  * Home
      All links in navbar takes you to the correct pages
@@ -56,7 +58,13 @@
     Category is being added to database and displays on managae category page and as an option for users when they add a new Place.
 
 
-# Roaming-In-India Manual Testing Page
+## MongoDB Database Collection:
+
+1.Database Categories List/Chart
+![MongoDB Collections](static/images/TESTME.img/MongoDB.PNG)
+
+2.Database added Places List/Chart
+![MongoDB Collections](static/images/TESTME.img/MongoDB2.PNG)
 
 ## Validator Testing:
 ![CSS Validator Report Image](static/images/TESTME.img/Roamingcss.PNG)
