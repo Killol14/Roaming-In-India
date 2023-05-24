@@ -150,7 +150,9 @@ a.btn-small.btn-hero {
 .btn {
 	margin: 10px;
 }
-
+.btn-small {
+    margin: 10px;
+}
 /*----------footer----------*/
 .pagination li i {
     font-size: 2rem;
