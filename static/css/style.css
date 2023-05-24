@@ -149,7 +149,11 @@ a.btn-small.btn-hero {
 .pagination li.active {
 	background-color: #26c6da;
 }
+ .col.s12 {
+    width: 100%;
+    margin-left: 0px;
 
+}
 
 
 /*----------footer----------*/
