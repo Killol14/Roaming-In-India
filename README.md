@@ -337,7 +337,13 @@ To run this project locally you need to create the env.py file using your own va
 
 ## Summary 
 
+Through the above languages and technologies, I have aimed to create a user friendly repository where people can add their own tips and advice on travelling to India. 
+
 ### Acknowledgements
+
+Credit goes to my mentor Ronan, who helped overlook my project
+Online youtube video for MongoDB Advise 
+Code Institute walkthrough project. 
 
  
  
