@@ -24,30 +24,30 @@
     Users own Details about Places appears on their account page
     "Add Places" button redirects to add Place page
     "Edit" button redirects to edit Place page
-    "Delete" button opens confirmation modal
-    "Yes" on modal deletes the Place Or Information from database
-    "No" on modal close the modal without any changes being made
+    "Delete" button opens confirmation tag
+    "Yes" on warning dialogue box message deletes the Place Or Information from database
+    "No" on the warning message closes the dialogue box without any changes being made
  * Log Out
     User being logged out from Account and redirected to Log In page
  * Add Places
     All fields in form are being filled out as expected
     Submitting the form will not work without all fields being filled out
-    If filled out correcly recipe is being added to the database and displays on account page and Place page
-    Location are being displayed in a list
-    Desctription are being displayed in a ordered list if you press enter after every step
+    If filled out correcly places/information are being added to the database and displays on account page and Place page
+    Locations are being displayed in a list
+    Description are being displayed 
     "Cancel" button takes you back to account page
  * Edit Place
     Form is prefilled with the previous information
     "Cancel" button takes you back to Place page
-    "Update recipe" button updates Place in database
+    "Update places" button updates Place in database
  * Manage Categories
     Only visible when Admin is logged in
     All tabs open and displays an "edit" and "delete" button
     "Edit" button redirects to edit category page
     "Add new category" button redirects to add category page
-    "Delete" button opens confirmation modal
-    "Yes" on modal deletes the category from database
-    "No" on modal close the modal without any changes being made
+    "Delete" button opens confirmation warning message dialogue box 
+    "Yes" on warning message dialogue box deletes the category from database
+    "No" on warning message dialogue box  close the modal without any changes being made
  * Edit Category
     The category name is prefilled in the input field
     "Cancel" button takes you back to manage categories page
@@ -81,35 +81,49 @@
 
 ![Manual Testing Image for Home Page](static/images/TESTME.img/Capture1.PNG)
 
+* Open the URL link https://roaming-in-india.herokuapp.com/. The homepage opens correclty with background images and navigation bar. 
 -----------------------------
 ### SHOW PLACES PAGE
 
 ![Manual Testing Image for Home Page](static/images/TESTME.img/Capture2.PNG)
+* Clicking on the show pages link, takes me to places in India page, this shows the search bar, with the places cards with pictures. 
 ![Manual Testing Image for Home Page](static/images/TESTME.img/Capture3.PNG)
+* Clicking on the places card, flips the cards over to show a descriptions.
 ![Manual Testing Image for Home Page](static/images/TESTME.img/Capture4.PNG)
+* Clicking on Places to travel, opens up a page with two cards on this.
 ![Manual Testing Image for Home Page](static/images/TESTME.img/Capture5.PNG)
+* Clicking on Most Visited places, opens up a page with cards on this, showing the most visited places. 
 ![Manual Testing Image for Home Page](static/images/TESTME.img/Capture6.PNG)
+* Clicking on the travel tips button, opens up a page with cards on this, showing a card with an Indian Flag with Travel tips on the rear.
 ![Manual Testing Image for Home Page](static/images/TESTME.img/Capture7.PNG)
+* Clicking on the Actvities button, opens up a page with cards on this, showing different activities at different locations.
 ![Manual Testing Image for Home Page](static/images/TESTME.img/Capture8.PNG)
+* Clicking on the transport button, opens up a page with cards on this, showing different modes of transport information at different locations.
 ![Manual Testing Image for Home Page](static/images/TESTME.img/Capture9.PNG)
-
+* Clicking on the India Map button, opens up a page with a card on this, showing information about the different states of India.
 ----------------------------
 ### SEARCH BAR 
 
 ![Manual Testing Image for Home Page](static/images/TESTME.img/Capture10.PNG)
 ![Manual Testing Image for Home Page](static/images/TESTME.img/Capture11.PNG)
 
+* When searching using the search bar, typing in Mumbai, brings up two results. 
+
 ---------------------------
 ### USER SIGN UP PAGE
 
 ![Manual Testing Image for Home Page](static/images/TESTME.img/Capture26.PNG)
+* After clicking sign up, it takes to the sign up page with username and password. 
 ![Manual Testing Image for Home Page](static/images/TESTME.img/Capture27.PNG)
+* After inputting details, a message appears saying registration sucessful.
 ![Manual Testing Image for Home Page](static/images/TESTME.img/Capture28.PNG)
+* Once registered sucessfully, it shows the user name and add places button to start editing. 
 
 ---------------------------
-### USER LOGIN AND OUT PAGE
+### USER LOGIN AND OFF PAGE
 
 ![Manual Testing Image for Home Page](static/images/TESTME.img/Capture25.PNG)
+* After clicking log in button takes you to the login page, after logging out, a message appears in red, saying that you have been locked out
 
 ---------------------------
 ### ADD PLACES
@@ -119,6 +133,8 @@
 ![Manual Testing Image for Home Page](static/images/TESTME.img/Capture14.PNG)
 ![Manual Testing Image for Home Page](static/images/TESTME.img/Capture15.PNG)
 ![Manual Testing Image for Home Page](static/images/TESTME.img/Capture17.PNG)
+
+* 
 
 ------------------------------
 ### Edit Places Page
